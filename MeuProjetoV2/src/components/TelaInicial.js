@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
+import { TelaLogin } from "./TelaLogin";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function TelaInicial() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
         <Image
@@ -17,7 +21,7 @@ export default function TelaInicial() {
             ></Image>
             <Text style={styles.textBotao}>Como deseja acessar?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botao2}>
+        <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate("TelaLogin")}>
             <Text style={styles.textSubTituloBotao}>Outras opções</Text>
         </TouchableOpacity>
     </View>
